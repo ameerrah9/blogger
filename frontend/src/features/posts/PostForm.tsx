@@ -16,8 +16,8 @@ function PostForm() {
     e.preventDefault();
     const formData = {
       post: {
-        title,
-        body,
+        title: title,
+        body: body,
       },
     };
     dispatch(createPostAsync(formData));
@@ -46,7 +46,11 @@ function PostForm() {
           value={body}
           onChange={(e) => setBody(e.target.value)}
         />
-        <button type='submit' onClick={(e) => submitHandler(e)}>
+        <button
+          type='submit'
+          className='form-control'
+          onClick={(e) => submitHandler(e)}
+        >
           Submit
         </button>
       </form>
